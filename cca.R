@@ -54,8 +54,6 @@ femaleTransALL$femaledatatransDtG <- as.numeric(as.character(femaleTransALL$fema
 femaleTransALL$femaledatatransDt10G <- as.numeric(as.character(femaleTransALL$femaledatatransDt10G))
 femaleTransALL$femaledatatransPS <- as.numeric(as.character(femaleTransALL$femaledatatransPS))
 femaleTransALL$femaledatatransLL <- as.numeric(as.character(femaleTransALL$femaledatatransLL))
-maleTransALL$maledatatransNP <- as.numeric(as.character(maleTransALL$maledatatransNP))
-maleTransALL$maledatatransDtP <- as.numeric(as.character(maleTransALL$maledatatransDtP))
 
 
 ### averaging the traits for cca 
@@ -92,11 +90,6 @@ TransENVFwPop <- read.csv("data/ENA_TransAvgwPop_ENV_F.csv")
 ##testing for any significance of env vars
 ENAordMALL <- cca(formula = ordinationMaleTransTraits ~ ., data = TransENVM) 
 anova(ENAordMALL)
-
-anova(ENAordMALL, by = "term")
-anova(ENAordMALL, by = "mar")
-anova(ENAordMALL, by = "axis")
-
 
 ### determining the best environmental variables to use in cca 
 mod1 <- cca(ordinationMaleTransTraits ~ ., TransENVM)
@@ -148,10 +141,6 @@ dev.off()
 ENAordFALL <- cca(formula = ordinationFemaleTransTraits ~ ., data = TransENVF) 
 anova(ENAordFALL)
 
-anova(ENAordFALL, by = "term")
-anova(ENAordFALL, by = "mar")
-anova(ENAordFALL, by = "axis")
-
 #### because the cca with all traits is not significant we should
 ## not proceed with model selection for females 
 
@@ -186,7 +175,7 @@ par(mar=c(5.1,5.1,4.1,2.1))
 ENAordFALL <- cca(formula = ordinationFemaleTransTraits ~ ., data = TransENVF) 
 plot(ENAordFALL,xlim=c(-10,10), ylim=c(-10,10),type="n", main="Females", 
      cex.axis=1.5, cex.lab=1.5, cex.main=2)
-with(TransENVFwPop, points(ENAordMALL, display="sites", pch=21, col="gray86", 
+with(TransENVFwPop, points(ENAordFALL, display="sites", pch=21, col="gray86", 
                            bg="gray86"))
 with(TransENVFwPop, ordiellipse(ENAordFALL, groups=Population,draw="polygon",
                                 col=colvec, kind="sd",lwd=0.1,alpha=50))
@@ -261,4 +250,5 @@ with(ef, legend("topright", legend = popvec, bty = "n",
                 col = colvec, pch = 21, pt.bg = colvec, cex = 1.5))
 
 dev.off()
+
 
