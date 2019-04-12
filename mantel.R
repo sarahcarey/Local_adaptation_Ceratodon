@@ -43,4 +43,3 @@ r1 <- mantel.rtest(geoALL,genALL,nrepet=999)
 r1
 plot(r1)
 
-
