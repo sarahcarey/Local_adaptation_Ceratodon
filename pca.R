@@ -2,17 +2,10 @@
 #### pca plots
 
 ## analyses for McDaniel et al done with R version 3.5.3
-## devtools version 2.0.2
 ## ggbiplot version 0.55
-## ggfortify version 0.4.6
 
-install.packages("devtools")
-library(devtools)
 install_github("vqv/ggbiplot")
 library(ggbiplot)
-install.packages("ggfortify")
-library("ggfortify")
-
 
 #### load in data
 maledata <- na.omit(read.csv("data/MaleENA.csv"))
@@ -322,5 +315,3 @@ autoplot(pcaMwodevo, data=ordinationMaleTransTraitswodevo,loadings=TRUE,colour="
                               "deeppink"))
 
 dev.off()
-
-
