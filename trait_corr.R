@@ -54,6 +54,13 @@ femaleTransALL$femaledatatransLL <- as.numeric(as.character(femaleTransALL$femal
 ## running correlations
 
 # males
+
+## global
+maletransCor <- cor(maleTransALL[1:6], use="everything")
+colnames(maletransCor) <- c("DtG","Dt10G","PS","LL","DtP","NP")
+rownames(maletransCor) <- c("DtG","Dt10G","PS","LL","DtP","NP")
+
+## by population
 maleAtrans <- subset(maleTransALL, malePopulation %in% "A")
 maleAtransCor <- cor(maleAtrans[1:6], use="everything")
 colnames(maleAtransCor) <- c("DtG","Dt10G","PS","LL","DtP","NP")
@@ -93,6 +100,14 @@ rownames(maleWtransCor) <- c("DtG","Dt10G","PS","LL","DtP","NP")
 ######################################
 
 # females
+
+## global
+
+femaletransCor <- cor(femaleTransALL[1:4], use="everything")
+colnames(femaletransCor) <- c("DtG","Dt10G","PS","LL")
+rownames(femaletransCor) <- c("DtG","Dt10G","PS","LL")
+
+## by population
 femaleAtrans <- subset(femaleTransALL, femalePopulation %in% "A")
 femaleAtransCor <- cor(femaleAtrans[1:4], use="everything")
 colnames(femaleAtransCor) <- c("DtG","Dt10G","PS","LL")
@@ -132,6 +147,13 @@ rownames(femaleWtransCor) <- c("DtG","Dt10G","PS","LL")
 ########################
 
 ## writing outputs
+
+## global
+write.csv(maletransCor,"tables/maleTraitCorrGlobal.csv")
+write.csv(femaletransCor,"tables/femaleTraitCorrGlobal.csv")
+
+
+## by population
 popnamesF <- c("A","","","",
                "D","","","",
                "E","","","",
