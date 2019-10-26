@@ -108,8 +108,8 @@ aovFemalefemaledatatransDtG <- aov(femaledatatransDtG~femalePopulation, data=fem
 lsmFemalefemaledatatransDtG <- lsmeans(aovFemalefemaledatatransDtG, "femalePopulation")
 lsmFemalefemaledatatransDtGtable <- summary(lsmFemalefemaledatatransDtG)
 backtransFemaleDtGlsm <- (lsmFemalefemaledatatransDtGtable$lsmean)^(-1/1.25)
-backtransFemaleDtGlower <- (lsmFemalefemaledatatransDtGtable$lower.CL)^(1/1.25)
-backtransFemaleDtGupper <- (lsmFemalefemaledatatransDtGtable$upper.CL)^(1/1.25)
+backtransFemaleDtGlower <- (lsmFemalefemaledatatransDtGtable$lower.CL)^(-1/1.25)
+backtransFemaleDtGupper <- (lsmFemalefemaledatatransDtGtable$upper.CL)^(-1/1.25)
 
 aovFemalefemaledatatransDt10G <- aov(femaledatatransDt10G~femalePopulation, data=femaleTransALL)
 lsmFemalefemaledatatransDt10G <- lsmeans(aovFemalefemaledatatransDt10G, "femalePopulation") 
