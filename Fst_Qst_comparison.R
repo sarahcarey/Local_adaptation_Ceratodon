@@ -360,9 +360,9 @@ lines(xNPmale,hxLLmale,col="cadetblue",lwd=5, lty=5)
 lines(xDtGmale,hxDtGmale,col="dodgerblue",lwd=5, lty=3)
 
 
-legend(x=0.7,y=14,legend=c("Fst","PS","DtG","LL","DtP","NP"),
+legend(x=0.6,y=14,legend=c("Fst (0.147)","PS (0.137)","DtG (0.341)","LL (0.246)","DtP (0.347)","NP (0.076)"),
        col=c("black","deepskyblue","dodgerblue","midnightblue","turquoise","cadetblue"),
-       lty=c(1,2,3,6,1,5), lwd=2, x.intersp=0.25, cex=1)
+       lty=c(1,2,3,6,1,5), lwd=2, x.intersp=0.25, cex=1.5, title="Trait (global value)")
 
 dev.off()
 
@@ -381,9 +381,9 @@ lines(xPSfemale,hxPSfemale,col="firebrick1",lwd=5, lty=2)
 lines(xDtGfemale,hxDtGfemale,col="salmon",lwd=5, lty=3)
 lines(xLLfemale,hxLLfemale,col="darkred",lwd=5, lty=6)
 
-legend(x=0.7,y=14,legend=c("Fst","PS","DtG","LL"),
+legend(x=0.6,y=14,legend=c("Fst (0.147)","PS (0.04)","DtG (0.08)","LL (0.04)"),
        col=c("black","firebrick1","salmon","darkred"),
-       lty=c(1,2,3,6), lwd=2, x.intersp=0.25, cex=1.5)
+       lty=c(1,2,3,6), lwd=2, x.intersp=0.25, cex=1.5, title="Trait (global value)")
 
 dev.off()
 
